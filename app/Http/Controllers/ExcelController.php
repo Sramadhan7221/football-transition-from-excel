@@ -37,7 +37,6 @@ class ExcelController extends Controller
         $transitionCount = $this->utilServices->countTransition($prepocessedData);
 
         return response()->json(['data' => $transitionCount]);
-        // return view('result', ['data' => $data]);
     }
 
     public function download(Request $request)

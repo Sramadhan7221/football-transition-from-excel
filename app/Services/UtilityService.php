@@ -44,26 +44,22 @@ class UtilityService
     public function countTransition(Collection $data) : array
     {
         $teams = array_keys($data->groupBy('team')->toArray());
+        $detail = [
+            'attacking' => 0,
+            'defending' => 0,
+            'into_shot' => 0,
+            'transition_shot' => 0,
+            'total_shot' => 0,
+            'into_goal' => 0,
+            'logs' => [],
+            'shot_logs' => [],
+            'intoshot_logs' => [],
+            'intogoal_logs' => []
+        ];
 
         $transitionData = [
-            $teams[0] => [
-                'attacking' => 0,
-                'defending' => 0,
-                'into_shot' => 0,
-                'total_shot' => 0,
-                'logs' => [],
-                'shot_logs' => [],
-                'intoshot_logs' => []
-            ],
-            $teams[1] => [
-                'attacking' => 0,
-                'defending' => 0,
-                'into_shot' => 0,
-                'total_shot' => 0,
-                'logs' => [],
-                'shot_logs' => [],
-                'intoshot_logs' => []
-            ],
+            $teams[0] => [...$detail],
+            $teams[1] => [...$detail],
         ];
         
         $rowData = array_values($data->toArray());
@@ -93,6 +89,55 @@ class UtilityService
             if($row['team'] !== $rowBefore['team'] && !in_array($row['action'], $invalidActions) && $row['min'] !== $rowBefore['min']) {
                 $transitionData[$row['team']]['attacking'] += 1;
                 $transitionData[$rowBefore['team']]['defending'] += 1;
+                $hasIntoShoot = false;
+                $hasIntoGoal = false;
+
+                for ($j=$i+1; $j < count($rowData); $j++) { 
+                    $eventTracking = $rowData[$j];
+                    if($row['team'] !== $eventTracking['team'])
+                        break;
+
+                    $shotOrGoal = (str_starts_with($eventTracking['action'], 'shoot') || $eventTracking['action'] == 'goal');
+                    if ($shotOrGoal && $this->intoShotValidate($eventTracking,$row['act_time'])) {
+
+                        if($eventTracking['action'] == 'goal') {
+                            $hasIntoGoal = true;
+                            $transitionData[$eventTracking['team']]['into_goal'] += 1;
+                            $transitionData[$eventTracking['team']]['intogoal_logs'][] = [
+                                'transition_time' => $row['min'],
+                                'transition_sec' => $row['act_time'],
+                                'action' => $eventTracking['action'],
+                                'action_time' => $eventTracking['min'],
+                                'action_sec' => $eventTracking['act_time'],
+                                'zone' => $eventTracking['act_zone'],
+                                'actor' => $eventTracking['act_name'],
+                                'team' => $eventTracking['team']
+                            ];
+                        } else {
+                            $hasIntoShoot = true;
+                            $transitionData[$eventTracking['team']]['transition_shot'] += 1;
+                            $transitionData[$eventTracking['team']]['into_shot'] += 1;
+                            $transitionData[$eventTracking['team']]['intoshot_logs'][] = [
+                                'transition_time' => $row['min'],
+                                'transition_sec' => $row['act_time'],
+                                'action' => $eventTracking['action'],
+                                'action_time' => $eventTracking['min'],
+                                'action_sec' => $eventTracking['act_time'],
+                                'zone' => $eventTracking['act_zone'],
+                                'actor' => $eventTracking['act_name'],
+                                'team' => $eventTracking['team']
+                            ];
+                        }
+                        
+                        break;
+                    }
+
+                    if(str_starts_with($eventTracking['action'], 'shoot')) {
+                        $transitionData[$eventTracking['team']]['transition_shot'] += 1;
+                        break;
+                    }
+                }
+
                 $transitionData[$row['team']]['logs'][] = [
                     'transition_time' => $row['min'],
                     'transition' => "Positive Transition",
@@ -100,31 +145,10 @@ class UtilityService
                     'action_time' => $row['min'],
                     'zone' => $row['act_zone'],
                     'actor' => $row['act_name'],
-                    'team' => $row['team']
+                    'team' => $row['team'],
+                    'into_shoot' => $hasIntoShoot,
+                    'into_goal' => $hasIntoGoal
                 ];
-
-                for ($j=$i+1; $j < count($rowData); $j++) { 
-                    $eventTracking = $rowData[$j];
-                    if($row['team'] !== $eventTracking['team'])
-                        break;
-
-                    if (str_starts_with($eventTracking['action'], 'shoot') && $this->intoShotValidate($eventTracking,$row['act_time'])) {
-
-                        $transitionData[$eventTracking['team']]['into_shot'] += 1;
-                        $transitionData[$eventTracking['team']]['intoshot_logs'][] = [
-                            'transition_time' => $row['min'],
-                            'transition_sec' => $row['act_time'],
-                            'action' => $eventTracking['action'],
-                            'action_time' => $eventTracking['min'],
-                            'action_sec' => $eventTracking['act_time'],
-                            'zone' => $eventTracking['act_zone'],
-                            'actor' => $eventTracking['act_name'],
-                            'team' => $eventTracking['team']
-                        ];
-                        
-                        break;
-                    }
-                }
 
             }
         }

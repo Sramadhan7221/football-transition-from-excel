@@ -139,6 +139,42 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="fw-bold text-gray-800" style="width: max-content;">
+                                                <span class="me-2">Turnover Leading into Goal</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 px-0">
+                                            <div class="fw-bold text-gray-800" style="width: max-content;">
+                                                <span class="me-2" id="teamATransIntoGoal">: 0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="fw-bold text-gray-800" style="width: max-content;">
+                                                <span class="me-2">Total Shoot</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 px-0">
+                                            <div class="fw-bold text-gray-800" style="width: max-content;">
+                                                <span class="me-2" id="teamATotalShoot">: 0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="fw-bold text-gray-800" style="width: max-content;">
+                                                <span class="me-2">% Shoot from counter attack</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 px-0">
+                                            <div class="fw-bold text-gray-800" style="width: max-content;">
+                                                <span class="me-2" id="teamAPercentShoot">: 0</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="hover-scroll-y">
                                     <div style="width: 800px;">
@@ -151,6 +187,8 @@
                                                     <th style="vertical-align: middle;">Zone</th>
                                                     <th style="vertical-align: middle; width: 200px;">Player</th>
                                                     <th style="vertical-align: middle; width: 200px;">Team</th>
+                                                    <th style="vertical-align: middle">Into Shoot</th>
+                                                    <th style="vertical-align: middle">Into Goal</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="fw-semibold text-gray-600">
@@ -207,6 +245,42 @@
                                         <div class="col-6 px-0">
                                             <div class="fw-bold text-gray-800" style="width: max-content;">
                                                 <span class="me-2" id="teamBTransIntoShot">: 0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="fw-bold text-gray-800" style="width: max-content;">
+                                                <span class="me-2">Turnover Leading into Goal</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 px-0">
+                                            <div class="fw-bold text-gray-800" style="width: max-content;">
+                                                <span class="me-2" id="teamBTransIntoGoal">: 0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="fw-bold text-gray-800" style="width: max-content;">
+                                                <span class="me-2">Total Shoot</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 px-0">
+                                            <div class="fw-bold text-gray-800" style="width: max-content;">
+                                                <span class="me-2" id="teamBTotalShoot">: 0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="fw-bold text-gray-800" style="width: max-content;">
+                                                <span class="me-2">% Shoot from counter attack</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 px-0">
+                                            <div class="fw-bold text-gray-800" style="width: max-content;">
+                                                <span class="me-2" id="teamBPercentShoot">: 0</span>
                                             </div>
                                         </div>
                                     </div>
@@ -273,7 +347,7 @@
                         },
                         title: function() {
                             // Ambil nama tim dari elemen #teamAName
-                            return 'Transition_' + $('#teamAName').text().trim().replace(/\s+/g, '_');
+                            return 'Positive_Transition_' + $('#teamAName').text().trim().replace(/\s+/g, '_');
                         }
                     }
                 ],
@@ -283,8 +357,35 @@
                     { targets: 2, width: '8%' },   
                     { targets: 3, width: '5%' },    
                     { targets: 4, width: '40%' },    
-                    { targets: 5, width: '19%' }   
-                ]
+                    { targets: 5, width: '19%' },
+                    {
+                        targets: 6,
+                        // render: function (data, type, row) {
+                        //     if (type === 'export') {
+                        //         return (data === true) ? 'true' : 'false';
+                        //     }
+                        //     return (data === true) ? '✅' : '⛔';
+                        // }
+                    },
+                    {
+                        targets: 7,
+                        // render: function (data, type, row) {
+                        //     if (type === 'export') {
+                        //         return (data === true) ? 'true' : 'false';
+                        //     }
+                        //     return (data === true) ? '✅' : '⛔';
+                        // }
+                    }
+                ],
+                createdRow: function(row, data, dataIndex) {
+                    console.log(data);
+                    if (data[6] === true) {
+                        $(row).css('background-color', '#FFFF00');
+                    }
+                    if (data[7] === true) {
+                        $(row).css('background-color', '#92D050');
+                    }
+                }
             });
 
             const tableB = $('#teamB').DataTable({
@@ -301,7 +402,7 @@
                         },
                         title: function() {
                             // Ambil nama tim dari elemen #teamAName
-                            return 'Transition_' + $('#teamBName').text().trim().replace(/\s+/g, '_');
+                            return 'Positive_Transition_' + $('#teamBName').text().trim().replace(/\s+/g, '_');
                         }
                     }
                 ],
@@ -312,7 +413,16 @@
                     { targets: 3, width: '5%' },    
                     { targets: 4, width: '40%' },    
                     { targets: 5, width: '19%' }    
-                ]
+                ],
+                createdRow: function(row, data, dataIndex) {
+                    console.log(data);
+                    if (data[6] === true) {
+                        $(row).css('background-color', '#FFFF00');
+                    }
+                    if (data[7] === true) {
+                        $(row).css('background-color', '#92D050');
+                    }
+                }
             });
 
             // Inisialisasi Dropzone
@@ -345,15 +455,27 @@
                         const teamAData = response.data[teamAKey].logs;
                         const teamBData = response.data[teamBKey].logs;
                         $("#teamALogo").attr('src', "{{ url('') }}/storage/"+teamAKey+".png");                    
-                        $("#teamAName").text(teamAKey.toUpperCase());                    
-                        $("#teamAPosTrans").text(response.data[teamAKey].attacking);                    
-                        $("#teamANegTrans").text(response.data[teamAKey].defending);                    
-                        $("#teamATransIntoShot").text(response.data[teamAKey].into_shot);                    
+                        $("#teamAName").text(": "+teamAKey.toUpperCase());                    
+                        $("#teamAPosTrans").text(": "+response.data[teamAKey].attacking);                    
+                        $("#teamANegTrans").text(": "+response.data[teamAKey].defending);                    
+                        $("#teamATransIntoShot").text(": "+response.data[teamAKey].into_shot);                    
+                        $("#teamATransIntoGoal").text(": "+response.data[teamAKey].into_goal); 
+                        let totalShoot = response.data[teamAKey].total_shot;                 
+                        let transShoot = response.data[teamAKey].transition_shot;                 
+                        let percentShoot = Math.round(transShoot / totalShoot * 100);                 
+                        $("#teamATotalShoot").text(": "+totalShoot);                    
+                        $("#teamAPercentShoot").text(": "+percentShoot+"%");                                     
                         $("#teamBLogo").attr('src', "{{ url('') }}/storage/"+teamBKey+".png");                    
-                        $("#teamBName").text(teamBKey.toUpperCase());                    
-                        $("#teamBPosTrans").text(response.data[teamBKey].attacking);                    
-                        $("#teamBNegTrans").text(response.data[teamBKey].defending);                    
-                        $("#teamBTransIntoShot").text(response.data[teamBKey].into_shot);                    
+                        $("#teamBName").text(": "+teamBKey.toUpperCase());                    
+                        $("#teamBPosTrans").text(": "+response.data[teamBKey].attacking);                    
+                        $("#teamBNegTrans").text(": "+response.data[teamBKey].defending);                    
+                        $("#teamBTransIntoShot").text(": "+response.data[teamBKey].into_shot);                    
+                        $("#teamBTransIntoGoal").text(": "+response.data[teamBKey].into_goal);     
+                        totalShoot = response.data[teamBKey].total_shot;                 
+                        transShoot = response.data[teamBKey].transition_shot;                 
+                        percentShoot = Math.round(transShoot / totalShoot * 100);                 
+                        $("#teamBTotalShoot").text(": "+totalShoot);                    
+                        $("#teamBPercentShoot").text(": "+percentShoot+"%");            
 
                         // Bersihkan dan masukkan data baru ke masing-masing tabel
                         const formatRow = (item, index) => [
@@ -362,7 +484,9 @@
                             item.action_time,
                             item.zone,
                             item.actor,
-                            item.team
+                            item.team,
+                            Boolean(item.into_shoot),
+                            Boolean(item.into_goal)
                         ];
                        
                         const rowsA = teamAData.map(formatRow);
