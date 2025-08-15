@@ -96,7 +96,7 @@
                                 <div class="row d-flex align-items-center mx-4 g-5 mb-5">
                                     <img src="{{ url('') }}/storage/no_image.png" id="teamALogo" alt="" style="max-width: 100px;">
                                     <div class="fs-2 fw-bold text-gray-800 text-center" style="width: max-content;">
-                                        <span class="me-2" id="teamAName">No Data To Load</span>
+                                        <span class="me-2 teamAName">No Data To Load</span>
                                     </div>
                                 </div>
                                 <div class="border p-3 mb-5">
@@ -205,7 +205,7 @@
                                 <div class="row d-flex align-items-center mx-4 g-5 mb-5">
                                     <img src="{{ url('') }}/storage/no_image.png" id="teamBLogo" alt="" style="max-width: 100px;">
                                     <div class="fs-2 fw-bold text-gray-800 text-center" style="width: max-content;">
-                                        <span class="me-2" id="teamBName">No Data To Load</span>
+                                        <span class="me-2 teamBName" >No Data To Load</span>
                                     </div>
                                 </div>
                                 <div class="border p-3 mb-5">
@@ -307,6 +307,114 @@
                         </div>
                     </div>
                 </div>
+                <div class="row g-5 gx-xl-10 mb-5 mb-xl-10">
+                    <!--begin::Col-->
+                    <div class="card card-flush">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <!--begin::Body-->
+                                    <p class="fs-2 fw-bold text-gray-800 text-center teamAName">No Data To Load</p>
+                                    <div class="lapang-container heatmap mx-auto" id="teamAField">
+                                        <div class="zone heat 1a" ></div>
+                                        <div class="zone heat 2a" ></div>
+                                        <div class="zone heat 3a" ></div>
+                                        <div class="zone heat 4a" ></div>
+                                        <div class="zone heat 5a" ></div>
+                                        <div class="zone heat 6a" ></div>
+
+                                        <div class="zone heat 1b" ></div>
+                                        <div class="zone heat 2b" ></div>
+                                        <div class="zone heat 3b" ></div>
+                                        <div class="zone heat 4b" ></div>
+                                        <div class="zone heat 5b" ></div>
+                                        <div class="zone heat 6b" ></div>
+
+                                        <div class="zone heat 1c" ></div>
+                                        <div class="zone heat 2c" ></div>
+                                        <div class="zone heat 3c" ></div>
+                                        <div class="zone heat 4c" ></div>
+                                        <div class="zone heat 5c" ></div>
+                                        <div class="zone heat 6c" ></div>
+
+                                        <div class="zone heat 1d" ></div>
+                                        <div class="zone heat 2d" ></div>
+                                        <div class="zone heat 3d" ></div>
+                                        <div class="zone heat 4d" ></div>
+                                        <div class="zone heat 5d" ></div>
+                                        <div class="zone heat 6d" ></div>
+
+                                        <div class="zone heat 1e" ></div>
+                                        <div class="zone heat 2e" ></div>
+                                        <div class="zone heat 3e" ></div>
+                                        <div class="zone heat 4e" ></div>
+                                        <div class="zone heat 5e" ></div>
+                                        <div class="zone heat 6e" ></div>
+                                    </div>
+                                </div>
+                                <!--end::Body-->
+                                <div class="col-6">
+                                    <!--begin::Body-->
+                                        <p class="fs-2 fw-bold text-gray-800 text-center teamBName">No Data To Load</p>
+                                        <div class="lapang-container heatmap mx-auto" id="teamBField">
+                                            <div class="zone heat 1a" ></div>
+                                            <div class="zone heat 2a" ></div>
+                                            <div class="zone heat 3a" ></div>
+                                            <div class="zone heat 4a" ></div>
+                                            <div class="zone heat 5a" ></div>
+                                            <div class="zone heat 6a" ></div>
+
+                                            <div class="zone heat 1b" ></div>
+                                            <div class="zone heat 2b" ></div>
+                                            <div class="zone heat 3b" ></div>
+                                            <div class="zone heat 4b" ></div>
+                                            <div class="zone heat 5b" ></div>
+                                            <div class="zone heat 6b" ></div>
+
+                                            <div class="zone heat 1c" ></div>
+                                            <div class="zone heat 2c" ></div>
+                                            <div class="zone heat 3c" ></div>
+                                            <div class="zone heat 4c" ></div>
+                                            <div class="zone heat 5c" ></div>
+                                            <div class="zone heat 6c" ></div>
+
+                                            <div class="zone heat 1d" ></div>
+                                            <div class="zone heat 2d" ></div>
+                                            <div class="zone heat 3d" ></div>
+                                            <div class="zone heat 4d" ></div>
+                                            <div class="zone heat 5d" ></div>
+                                            <div class="zone heat 6d" ></div>
+
+                                            <div class="zone heat 1e" ></div>
+                                            <div class="zone heat 2e" ></div>
+                                            <div class="zone heat 3e" ></div>
+                                            <div class="zone heat 4e" ></div>
+                                            <div class="zone heat 5e" ></div>
+                                            <div class="zone heat 6e" ></div>
+                                        </div>
+                                    <!--end::Body-->
+                                </div>
+                            </div>
+                            <div class="separator mt-10 mb-3"></div>
+                            <p class="mb-2 fw-bold text-gray-800">Legends : </p>
+                            <div class="row mb-1">
+                                <span class="d-flex align-items-center">
+                                    <i class="ki-solid ki-geolocation text-warning fs-2 me-2"></i> : Turnover Leading into Shoot
+                                </span>
+                            </div>
+                            <div class="row mb-1">
+                                <span class="d-flex align-items-center">
+                                    <i class="ki-solid ki-star text-warning fs-2 me-2"></i> : Turnover Leading into Goal
+                                </span>
+                            </div>
+                            <div class="row">
+                                <span class="d-flex align-items-center">
+                                    <i class="fs-2 me-2" style="background-color: black; min-width: 20px; min-height: 17px;"></i> : Counter Attack zone
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!--end::Content container-->
         </div>
@@ -320,6 +428,51 @@
 @push('styles')
     <link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
+    <style>
+        .lapang-container {
+            position: relative;
+            width: 480px;
+            height: 300px;
+            background: url("{{ asset('assets/media/lapang-new.png') }}") no-repeat center/cover; /* gambar lapangan */
+            border: 2px solid #fff;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+        }
+        .field::before, .field::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+        }
+
+        .zone {
+            border: 1px solid #E63946;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: black;
+            font-size: 1.2rem;
+            background-color: rgba(255, 255, 255, 0.2); /* sedikit transparan biar kelihatan */
+        }
+
+        .heatmap .zone {
+            position: relative;
+        }
+        .heatmap .heat::before {
+            content: '';
+            position: absolute;
+            top:0;left:0;width:100%;height:100%;
+            /* background-color: red;
+            opacity: calc(var(--intensity) / 10); */
+        }
+        .float-icon {
+            position: relative;
+            cursor: pointer;
+        }
+    </style>
 @endpush
 @push('scripts')
     <script src="{{ asset('assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
@@ -378,7 +531,6 @@
                     }
                 ],
                 createdRow: function(row, data, dataIndex) {
-                    console.log(data);
                     if (data[6] === true) {
                         $(row).css('background-color', '#FFFF00');
                     }
@@ -415,7 +567,6 @@
                     { targets: 5, width: '19%' }    
                 ],
                 createdRow: function(row, data, dataIndex) {
-                    console.log(data);
                     if (data[6] === true) {
                         $(row).css('background-color', '#FFFF00');
                     }
@@ -454,8 +605,20 @@
                         const [teamAKey, teamBKey] = Object.keys(response.data);
                         const teamAData = response.data[teamAKey].logs;
                         const teamBData = response.data[teamBKey].logs;
+                        const teamACTZone = response.data[teamAKey].ct_zone.reduce((acc, val) => {
+                            acc[val] = (acc[val] || 0) + 1;
+                            return acc;
+                        }, {});
+                        const teamBCTZone = response.data[teamBKey].ct_zone.reduce((acc, val) => {
+                            acc[val] = (acc[val] || 0) + 1;
+                            return acc;
+                        }, {});
+                        const teamAIntoShoot = response.data[teamAKey].intoshot_logs;
+                        const teamBIntoShoot = response.data[teamBKey].intoshot_logs;
+                        const teamAIntoGoal = response.data[teamAKey].intogoal_logs;
+                        const teamBIntoGoal = response.data[teamBKey].intogoal_logs;
                         $("#teamALogo").attr('src', "{{ url('') }}/storage/"+teamAKey+".png");                    
-                        $("#teamAName").text(": "+teamAKey.toUpperCase());                    
+                        $(".teamAName").text(teamAKey.toUpperCase());                    
                         $("#teamAPosTrans").text(": "+response.data[teamAKey].attacking);                    
                         $("#teamANegTrans").text(": "+response.data[teamAKey].defending);                    
                         $("#teamATransIntoShot").text(": "+response.data[teamAKey].into_shot);                    
@@ -466,7 +629,7 @@
                         $("#teamATotalShoot").text(": "+totalShoot);                    
                         $("#teamAPercentShoot").text(": "+percentShoot+"%");                                     
                         $("#teamBLogo").attr('src', "{{ url('') }}/storage/"+teamBKey+".png");                    
-                        $("#teamBName").text(": "+teamBKey.toUpperCase());                    
+                        $(".teamBName").text(teamBKey.toUpperCase());                    
                         $("#teamBPosTrans").text(": "+response.data[teamBKey].attacking);                    
                         $("#teamBNegTrans").text(": "+response.data[teamBKey].defending);                    
                         $("#teamBTransIntoShot").text(": "+response.data[teamBKey].into_shot);                    
@@ -493,6 +656,62 @@
                         const rowsB = teamBData.map(formatRow);
                         tableA.clear().rows.add(rowsA).draw();
                         tableB.clear().rows.add(rowsB).draw();
+
+                        Object.entries(teamACTZone)
+                        .map(([key, value]) => {
+                            const zone = "."+[key];
+                            const opacityVal = value / Object.entries(teamACTZone).length;
+                            // $("#teamAField").children(zone).css("background-color",`rgba(237,41,57,${opacityVal})`);
+                            $("#teamAField").children(zone).css("background-color",`rgba(0,0,0,${opacityVal})`);
+                        });
+                        Object.entries(teamBCTZone)
+                        .map(([key, value]) => {
+                            const zone = "."+[key];
+                            const opacityVal = value / Object.entries(teamACTZone).length;
+                            // $("#teamBField").children(zone).css("background-color",`rgba(237,41,57,${opacityVal})`);
+                            $("#teamBField").children(zone).css("background-color",`rgba(0,0,0,${opacityVal})`);
+                        });
+
+                        if(teamAIntoShoot) {
+                            Object.entries(teamAIntoShoot).map(([key, value]) => {
+                                const zone = "."+[key];
+                                const shootZone = value.join(",");
+                                const element = `<i class="ki-solid ki-geolocation text-warning float-icon fs-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Shoot zone : ${shootZone}"></i>`;
+                                // $("#teamBField").children(zone).css("background-color",`rgba(237,41,57,${opacityVal})`);
+                                $("#teamAField").children(zone).append(element);
+                            });
+                        }
+
+                        if(teamBIntoShoot) {
+                            Object.entries(teamBIntoShoot).map(([key, value]) => {
+                                const zone = "."+[key];
+                                const shootZone = value.join(",");
+                                const element = `<i class="ki-solid ki-geolocation text-warning float-icon fs-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Shoot zone : ${shootZone}"></i>`;
+                                // $("#teamBField").children(zone).css("background-color",`rgba(237,41,57,${opacityVal})`);
+                                $("#teamBField").children(zone).append(element);
+                            });
+                        }
+
+                        if(teamAIntoGoal) {
+                            Object.entries(teamAIntoGoal).map(([key, value]) => {
+                                const zone = "."+[key];
+                                const shootZone = value.join(",");
+                                const element = `<i class="ki-solid ki-star text-warning float-icon fs-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Shoot zone : ${shootZone}"></i>`;
+                                $("#teamAField").children(zone).append(element);
+                            });
+                        }
+
+                        if(teamBIntoGoal) {
+                            Object.entries(teamBIntoGoal).map(([key, value]) => {
+                                const zone = "."+[key];
+                                const shootZone = value.join(",");
+                                const element = `<i class="ki-solid ki-star text-warning float-icon fs-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Shoot zone : ${shootZone}"></i>`;
+                                $("#teamBField").children(zone).append(element);
+                            });
+                        }
+
+
+                        console.log("intoShotA", teamAIntoShoot,"intoShotB", teamBIntoShoot, "intoGoalA", teamAIntoGoal, "intoGoalB", teamBIntoGoal);
 
                         $("#submit-all")
                             .removeAttr("data-kt-indicator")

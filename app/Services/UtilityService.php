@@ -53,8 +53,9 @@ class UtilityService
             'into_goal' => 0,
             'logs' => [],
             'shot_logs' => [],
-            'intoshot_logs' => [],
-            'intogoal_logs' => []
+            'intoshot_logs' => null,
+            'intogoal_logs' => null,
+            'ct_zone' => []
         ];
 
         $transitionData = [
@@ -87,15 +88,26 @@ class UtilityService
             }
 
             if($row['team'] !== $rowBefore['team'] && !in_array($row['action'], $invalidActions) && $row['min'] !== $rowBefore['min']) {
+                $defensiveThirdZone = [
+                    '1a', '1b', '1c', '1d', '1e', '2a' , '2b',
+                    '2c', '2d', '2e', '3a', '3b', '3c', '3d', '3e'
+                ];
                 $transitionData[$row['team']]['attacking'] += 1;
                 $transitionData[$rowBefore['team']]['defending'] += 1;
+                $zone = null;
                 $hasIntoShoot = false;
                 $hasIntoGoal = false;
 
                 for ($j=$i+1; $j < count($rowData); $j++) { 
+                    $finalThirdZone = ['5a','5b','5c','5d','5e','6a','6b','6c','6d','6e'];
                     $eventTracking = $rowData[$j];
                     if($row['team'] !== $eventTracking['team'])
                         break;
+
+                    if($zone != $row['act_zone'] && in_array($row['act_zone'], $defensiveThirdZone) && in_array($eventTracking['act_zone'], $finalThirdZone)) {
+                        $transitionData[$row['team']]['ct_zone'][] = $row['act_zone'];
+                        $zone = $row['act_zone'];
+                    }
 
                     $shotOrGoal = (str_starts_with($eventTracking['action'], 'shoot') || $eventTracking['action'] == 'goal');
                     if ($shotOrGoal && $this->intoShotValidate($eventTracking,$row['act_time'])) {
@@ -103,30 +115,42 @@ class UtilityService
                         if($eventTracking['action'] == 'goal') {
                             $hasIntoGoal = true;
                             $transitionData[$eventTracking['team']]['into_goal'] += 1;
-                            $transitionData[$eventTracking['team']]['intogoal_logs'][] = [
-                                'transition_time' => $row['min'],
-                                'transition_sec' => $row['act_time'],
-                                'action' => $eventTracking['action'],
-                                'action_time' => $eventTracking['min'],
-                                'action_sec' => $eventTracking['act_time'],
-                                'zone' => $eventTracking['act_zone'],
-                                'actor' => $eventTracking['act_name'],
-                                'team' => $eventTracking['team']
-                            ];
+                            if (isset($transitionData[$eventTracking['team']]['intogoal_logs'][$row['act_zone']])) {
+                                $transitionData[$eventTracking['team']]['intogoal_logs'][$row['act_zone']][] = $eventTracking['act_zone'];
+                            } else {
+                                $transitionData[$eventTracking['team']]['intogoal_logs'][$row['act_zone']] = [$eventTracking['act_zone']];
+                            }
+
+                            // $transitionData[$eventTracking['team']]['intogoal_logs'][] = [
+                            //     'transition_time' => $row['min'],
+                            //     'transition_sec' => $row['act_time'],
+                            //     'action' => $eventTracking['action'],
+                            //     'action_time' => $eventTracking['min'],
+                            //     'action_sec' => $eventTracking['act_time'],
+                            //     'zone' => $eventTracking['act_zone'],
+                            //     'actor' => $eventTracking['act_name'],
+                            //     'team' => $eventTracking['team']
+                            // ];
                         } else {
                             $hasIntoShoot = true;
                             $transitionData[$eventTracking['team']]['transition_shot'] += 1;
                             $transitionData[$eventTracking['team']]['into_shot'] += 1;
-                            $transitionData[$eventTracking['team']]['intoshot_logs'][] = [
-                                'transition_time' => $row['min'],
-                                'transition_sec' => $row['act_time'],
-                                'action' => $eventTracking['action'],
-                                'action_time' => $eventTracking['min'],
-                                'action_sec' => $eventTracking['act_time'],
-                                'zone' => $eventTracking['act_zone'],
-                                'actor' => $eventTracking['act_name'],
-                                'team' => $eventTracking['team']
-                            ];
+                            if (isset($transitionData[$eventTracking['team']]['intoshot_logs'][$row['act_zone']])) {
+                                $transitionData[$eventTracking['team']]['intoshot_logs'][$row['act_zone']][] = $eventTracking['act_zone'];
+                            } else {
+                                $transitionData[$eventTracking['team']]['intoshot_logs'][$row['act_zone']] = [$eventTracking['act_zone']];
+                            }
+
+                            // $transitionData[$eventTracking['team']]['intoshot_logs'][] = [
+                            //     'transition_time' => $row['min'],
+                            //     'transition_sec' => $row['act_time'],
+                            //     'action' => $eventTracking['action'],
+                            //     'action_time' => $eventTracking['min'],
+                            //     'action_sec' => $eventTracking['act_time'],
+                            //     'zone' => $eventTracking['act_zone'],
+                            //     'actor' => $eventTracking['act_name'],
+                            //     'team' => $eventTracking['team']
+                            // ];
                         }
                         
                         break;
@@ -181,4 +205,5 @@ class UtilityService
 
         return false;
     }
+
 }
