@@ -34,11 +34,30 @@ class UtilityService
                 $rowData[] = $timeInSecond;
 
                 return array_combine($headers, $rowData);
-            })->sortBy('act_time');
+            });
 
-        // $teams = array_keys($data->groupBy('team')->toArray());
+        $dataSort = $data->sort(function($a, $b) use (&$data) {
+            // Urutkan berdasar act_time
+            if ($a['act_time'] !== $b['act_time']) {
+                return $a['act_time'] <=> $b['act_time'];
+            }
 
-        return $data;
+            //jika act_time sama cek team sebelumnya
+            // cari baris sebelumnya (act_time lebih kecil)
+            $prev = $data
+                ->where('act_time', '<', $a['act_time'])
+                ->sortByDesc('act_time')
+                ->first();
+
+            if ($prev) {
+                if ($a['team'] === $prev['team']) return -1; // $a duluan
+                if ($b['team'] === $prev['team']) return 1;  // $b duluan
+            }
+
+            return 0;
+        });
+
+        return $dataSort;
     }
 
     public function countTransition(Collection $data) : array
@@ -64,9 +83,8 @@ class UtilityService
         ];
         
         $rowData = array_values($data->toArray());
-        $invalidActions = ['throw in','goal kick','subs','foul','fouled','keeper','concede goal'];
+        $invalidActions = ['throw in','goal kick','subs','foul','fouled','keeper','concede goal','free kick','tackle failed','yellow card','red card', 'intercept failed', 'header failed'];
         
-
         for ($i=0; $i < count($rowData); $i++) { 
             $row = $rowData[$i];
             $rowBefore = $i > 0 ? $rowData[$i-1] : null;
@@ -88,6 +106,10 @@ class UtilityService
             }
 
             if($row['team'] !== $rowBefore['team'] && !in_array($row['action'], $invalidActions) && $row['min'] !== $rowBefore['min']) {
+
+                if(($row['action'] == "offensive duel" || $row['action'] == "defensive duel") && $row['sub_1'] == 'lost')
+                    continue;
+
                 $defensiveThirdZone = [
                     '1a', '1b', '1c', '1d', '1e', '2a' , '2b',
                     '2c', '2d', '2e', '3a', '3b', '3c', '3d', '3e'
