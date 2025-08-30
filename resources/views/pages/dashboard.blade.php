@@ -58,7 +58,7 @@
                                                     <!--begin::Info-->
                                                     <div class="ms-4">
                                                         <h3 class="fs-5 fw-bold text-gray-900 mb-1">Drop files here or click to upload.</h3>
-                                                        <span class="fs-7 fw-semibold text-gray-500">Upload up to 10 files</span>
+                                                        <span class="fs-7 fw-semibold text-gray-500">Please upload the match action log in an Excel file</span>
                                                     </div>
                                                     <!--end::Info-->
                                                 </div>
@@ -318,40 +318,40 @@
                                     <!--begin::Body-->
                                     <p class="fs-2 fw-bold text-gray-800 text-center teamAName">No Data To Load</p>
                                     <div class="lapang-container heatmap mx-auto" id="teamAFieldCT">
-                                        <div class="zone heat 1a" ></div>
-                                        <div class="zone heat 2a" ></div>
-                                        <div class="zone heat 3a" ></div>
-                                        <div class="zone heat 4a" ></div>
-                                        <div class="zone heat 5a" ></div>
-                                        <div class="zone heat 6a" ></div>
+                                        <div class="zone heat 1a" >1A</div>
+                                        <div class="zone heat 2a" >2A</div>
+                                        <div class="zone heat 3a" >3A</div>
+                                        <div class="zone heat 4a" >4A</div>
+                                        <div class="zone heat 5a" >5A</div>
+                                        <div class="zone heat 6a" >6A</div>
 
-                                        <div class="zone heat 1b" ></div>
-                                        <div class="zone heat 2b" ></div>
-                                        <div class="zone heat 3b" ></div>
-                                        <div class="zone heat 4b" ></div>
-                                        <div class="zone heat 5b" ></div>
-                                        <div class="zone heat 6b" ></div>
+                                        <div class="zone heat 1b" >1B</div>
+                                        <div class="zone heat 2b" >2B</div>
+                                        <div class="zone heat 3b" >3B</div>
+                                        <div class="zone heat 4b" >4B</div>
+                                        <div class="zone heat 5b" >5B</div>
+                                        <div class="zone heat 6b" >6B</div>
 
-                                        <div class="zone heat 1c" ></div>
-                                        <div class="zone heat 2c" ></div>
-                                        <div class="zone heat 3c" ></div>
-                                        <div class="zone heat 4c" ></div>
-                                        <div class="zone heat 5c" ></div>
-                                        <div class="zone heat 6c" ></div>
+                                        <div class="zone heat 1c" >1C</div>
+                                        <div class="zone heat 2c" >2C</div>
+                                        <div class="zone heat 3c" >3C</div>
+                                        <div class="zone heat 4c" >4C</div>
+                                        <div class="zone heat 5c" >5C</div>
+                                        <div class="zone heat 6c" >6C</div>
 
-                                        <div class="zone heat 1d" ></div>
-                                        <div class="zone heat 2d" ></div>
-                                        <div class="zone heat 3d" ></div>
-                                        <div class="zone heat 4d" ></div>
-                                        <div class="zone heat 5d" ></div>
-                                        <div class="zone heat 6d" ></div>
+                                        <div class="zone heat 1d" >1D</div>
+                                        <div class="zone heat 2d" >2D</div>
+                                        <div class="zone heat 3d" >3D</div>
+                                        <div class="zone heat 4d" >4D</div>
+                                        <div class="zone heat 5d" >5D</div>
+                                        <div class="zone heat 6d" >6D</div>
 
-                                        <div class="zone heat 1e" ></div>
-                                        <div class="zone heat 2e" ></div>
-                                        <div class="zone heat 3e" ></div>
-                                        <div class="zone heat 4e" ></div>
-                                        <div class="zone heat 5e" ></div>
-                                        <div class="zone heat 6e" ></div>
+                                        <div class="zone heat 1e" >1E</div>
+                                        <div class="zone heat 2e" >2E</div>
+                                        <div class="zone heat 3e" >3E</div>
+                                        <div class="zone heat 4e" >4E</div>
+                                        <div class="zone heat 5e" >5E</div>
+                                        <div class="zone heat 6e" >6E</div>
                                     </div>
                                 </div>
                                 <!--end::Body-->
@@ -359,40 +359,40 @@
                                     <!--begin::Body-->
                                         <p class="fs-2 fw-bold text-gray-800 text-center teamBName">No Data To Load</p>
                                         <div class="lapang-container heatmap mx-auto" id="teamBFieldCT">
-                                            <div class="zone heat 1a" ></div>
-                                            <div class="zone heat 2a" ></div>
-                                            <div class="zone heat 3a" ></div>
-                                            <div class="zone heat 4a" ></div>
-                                            <div class="zone heat 5a" ></div>
-                                            <div class="zone heat 6a" ></div>
+                                            <div class="zone heat 1a" >1A</div>
+                                            <div class="zone heat 2a" >2A</div>
+                                            <div class="zone heat 3a" >3A</div>
+                                            <div class="zone heat 4a" >4A</div>
+                                            <div class="zone heat 5a" >5A</div>
+                                            <div class="zone heat 6a" >6A</div>
 
-                                            <div class="zone heat 1b" ></div>
-                                            <div class="zone heat 2b" ></div>
-                                            <div class="zone heat 3b" ></div>
-                                            <div class="zone heat 4b" ></div>
-                                            <div class="zone heat 5b" ></div>
-                                            <div class="zone heat 6b" ></div>
+                                            <div class="zone heat 1b" >1B</div>
+                                            <div class="zone heat 2b" >2B</div>
+                                            <div class="zone heat 3b" >3B</div>
+                                            <div class="zone heat 4b" >4B</div>
+                                            <div class="zone heat 5b" >5B</div>
+                                            <div class="zone heat 6b" >6B</div>
 
-                                            <div class="zone heat 1c" ></div>
-                                            <div class="zone heat 2c" ></div>
-                                            <div class="zone heat 3c" ></div>
-                                            <div class="zone heat 4c" ></div>
-                                            <div class="zone heat 5c" ></div>
-                                            <div class="zone heat 6c" ></div>
+                                            <div class="zone heat 1c" >1C</div>
+                                            <div class="zone heat 2c" >2C</div>
+                                            <div class="zone heat 3c" >3C</div>
+                                            <div class="zone heat 4c" >4C</div>
+                                            <div class="zone heat 5c" >5C</div>
+                                            <div class="zone heat 6c" >6C</div>
 
-                                            <div class="zone heat 1d" ></div>
-                                            <div class="zone heat 2d" ></div>
-                                            <div class="zone heat 3d" ></div>
-                                            <div class="zone heat 4d" ></div>
-                                            <div class="zone heat 5d" ></div>
-                                            <div class="zone heat 6d" ></div>
+                                            <div class="zone heat 1d" >1D</div>
+                                            <div class="zone heat 2d" >2D</div>
+                                            <div class="zone heat 3d" >3D</div>
+                                            <div class="zone heat 4d" >4D</div>
+                                            <div class="zone heat 5d" >5D</div>
+                                            <div class="zone heat 6d" >6D</div>
 
-                                            <div class="zone heat 1e" ></div>
-                                            <div class="zone heat 2e" ></div>
-                                            <div class="zone heat 3e" ></div>
-                                            <div class="zone heat 4e" ></div>
-                                            <div class="zone heat 5e" ></div>
-                                            <div class="zone heat 6e" ></div>
+                                            <div class="zone heat 1e" >1E</div>
+                                            <div class="zone heat 2e" >2E</div>
+                                            <div class="zone heat 3e" >3E</div>
+                                            <div class="zone heat 4e" >4E</div>
+                                            <div class="zone heat 5e" >5E</div>
+                                            <div class="zone heat 6e" >6E</div>
                                         </div>
                                     <!--end::Body-->
                                 </div>
@@ -418,40 +418,40 @@
                                     <!--begin::Body-->
                                     <p class="fs-2 fw-bold text-gray-800 text-center teamAName">No Data To Load</p>
                                     <div class="lapang-container heatmap mx-auto" id="teamAField">
-                                        <div class="zone heat 1a" ></div>
-                                        <div class="zone heat 2a" ></div>
-                                        <div class="zone heat 3a" ></div>
-                                        <div class="zone heat 4a" ></div>
-                                        <div class="zone heat 5a" ></div>
-                                        <div class="zone heat 6a" ></div>
+                                        <div class="zone heat 1a" >1A</div>
+                                        <div class="zone heat 2a" >2A</div>
+                                        <div class="zone heat 3a" >3A</div>
+                                        <div class="zone heat 4a" >4A</div>
+                                        <div class="zone heat 5a" >5A</div>
+                                        <div class="zone heat 6a" >6A</div>
 
-                                        <div class="zone heat 1b" ></div>
-                                        <div class="zone heat 2b" ></div>
-                                        <div class="zone heat 3b" ></div>
-                                        <div class="zone heat 4b" ></div>
-                                        <div class="zone heat 5b" ></div>
-                                        <div class="zone heat 6b" ></div>
+                                        <div class="zone heat 1b" >1B</div>
+                                        <div class="zone heat 2b" >2B</div>
+                                        <div class="zone heat 3b" >3B</div>
+                                        <div class="zone heat 4b" >4B</div>
+                                        <div class="zone heat 5b" >5B</div>
+                                        <div class="zone heat 6b" >6B</div>
 
-                                        <div class="zone heat 1c" ></div>
-                                        <div class="zone heat 2c" ></div>
-                                        <div class="zone heat 3c" ></div>
-                                        <div class="zone heat 4c" ></div>
-                                        <div class="zone heat 5c" ></div>
-                                        <div class="zone heat 6c" ></div>
+                                        <div class="zone heat 1c" >1C</div>
+                                        <div class="zone heat 2c" >2C</div>
+                                        <div class="zone heat 3c" >3C</div>
+                                        <div class="zone heat 4c" >4C</div>
+                                        <div class="zone heat 5c" >5C</div>
+                                        <div class="zone heat 6c" >6C</div>
 
-                                        <div class="zone heat 1d" ></div>
-                                        <div class="zone heat 2d" ></div>
-                                        <div class="zone heat 3d" ></div>
-                                        <div class="zone heat 4d" ></div>
-                                        <div class="zone heat 5d" ></div>
-                                        <div class="zone heat 6d" ></div>
+                                        <div class="zone heat 1d" >1D</div>
+                                        <div class="zone heat 2d" >2D</div>
+                                        <div class="zone heat 3d" >3D</div>
+                                        <div class="zone heat 4d" >4D</div>
+                                        <div class="zone heat 5d" >5D</div>
+                                        <div class="zone heat 6d" >6D</div>
 
-                                        <div class="zone heat 1e" ></div>
-                                        <div class="zone heat 2e" ></div>
-                                        <div class="zone heat 3e" ></div>
-                                        <div class="zone heat 4e" ></div>
-                                        <div class="zone heat 5e" ></div>
-                                        <div class="zone heat 6e" ></div>
+                                        <div class="zone heat 1e" >1E</div>
+                                        <div class="zone heat 2e" >2E</div>
+                                        <div class="zone heat 3e" >3E</div>
+                                        <div class="zone heat 4e" >4E</div>
+                                        <div class="zone heat 5e" >5E</div>
+                                        <div class="zone heat 6e" >6E</div>
                                     </div>
                                 </div>
                                 <!--end::Body-->
@@ -459,40 +459,40 @@
                                     <!--begin::Body-->
                                         <p class="fs-2 fw-bold text-gray-800 text-center teamBName">No Data To Load</p>
                                         <div class="lapang-container heatmap mx-auto" id="teamBField">
-                                            <div class="zone heat 1a" ></div>
-                                            <div class="zone heat 2a" ></div>
-                                            <div class="zone heat 3a" ></div>
-                                            <div class="zone heat 4a" ></div>
-                                            <div class="zone heat 5a" ></div>
-                                            <div class="zone heat 6a" ></div>
+                                            <div class="zone heat 1a" >1A</div>
+                                            <div class="zone heat 2a" >2A</div>
+                                            <div class="zone heat 3a" >3A</div>
+                                            <div class="zone heat 4a" >4A</div>
+                                            <div class="zone heat 5a" >5A</div>
+                                            <div class="zone heat 6a" >6A</div>
 
-                                            <div class="zone heat 1b" ></div>
-                                            <div class="zone heat 2b" ></div>
-                                            <div class="zone heat 3b" ></div>
-                                            <div class="zone heat 4b" ></div>
-                                            <div class="zone heat 5b" ></div>
-                                            <div class="zone heat 6b" ></div>
+                                            <div class="zone heat 1b" >1B</div>
+                                            <div class="zone heat 2b" >2B</div>
+                                            <div class="zone heat 3b" >3B</div>
+                                            <div class="zone heat 4b" >4B</div>
+                                            <div class="zone heat 5b" >5B</div>
+                                            <div class="zone heat 6b" >6B</div>
 
-                                            <div class="zone heat 1c" ></div>
-                                            <div class="zone heat 2c" ></div>
-                                            <div class="zone heat 3c" ></div>
-                                            <div class="zone heat 4c" ></div>
-                                            <div class="zone heat 5c" ></div>
-                                            <div class="zone heat 6c" ></div>
+                                            <div class="zone heat 1c" >1C</div>
+                                            <div class="zone heat 2c" >2C</div>
+                                            <div class="zone heat 3c" >3C</div>
+                                            <div class="zone heat 4c" >4C</div>
+                                            <div class="zone heat 5c" >5C</div>
+                                            <div class="zone heat 6c" >6C</div>
 
-                                            <div class="zone heat 1d" ></div>
-                                            <div class="zone heat 2d" ></div>
-                                            <div class="zone heat 3d" ></div>
-                                            <div class="zone heat 4d" ></div>
-                                            <div class="zone heat 5d" ></div>
-                                            <div class="zone heat 6d" ></div>
+                                            <div class="zone heat 1d" >1D</div>
+                                            <div class="zone heat 2d" >2D</div>
+                                            <div class="zone heat 3d" >3D</div>
+                                            <div class="zone heat 4d" >4D</div>
+                                            <div class="zone heat 5d" >5D</div>
+                                            <div class="zone heat 6d" >6D</div>
 
-                                            <div class="zone heat 1e" ></div>
-                                            <div class="zone heat 2e" ></div>
-                                            <div class="zone heat 3e" ></div>
-                                            <div class="zone heat 4e" ></div>
-                                            <div class="zone heat 5e" ></div>
-                                            <div class="zone heat 6e" ></div>
+                                            <div class="zone heat 1e" >1E</div>
+                                            <div class="zone heat 2e" >2E</div>
+                                            <div class="zone heat 3e" >3E</div>
+                                            <div class="zone heat 4e" >4E</div>
+                                            <div class="zone heat 5e" >5E</div>
+                                            <div class="zone heat 6e" >6E</div>
                                         </div>
                                     <!--end::Body-->
                                 </div>
@@ -530,7 +530,7 @@
             position: relative;
             width: 480px;
             height: 300px;
-            background: url("{{ asset('assets/media/lapang-new.png') }}") no-repeat center/cover; /* gambar lapangan */
+            background: url("{{ asset('assets/media/lapang-newest.png') }}") no-repeat center/cover; /* gambar lapangan */
             border: 2px solid #fff;
             display: grid;
             grid-template-columns: repeat(6, 1fr);
@@ -550,9 +550,8 @@
             justify-content: center;
             align-items: center;
             font-weight: bold;
-            color: black;
+            color: white;
             font-size: 1.2rem;
-            background-color: rgba(255, 255, 255, 0.2); /* sedikit transparan biar kelihatan */
         }
 
         .heatmap .zone {
@@ -586,6 +585,7 @@
             const tableA = $('#teamA').DataTable({
                 responsive: false,
                 searching: false,
+                pageLength: 5,
                 dom: 'Bfrtip', // Menambahkan tombol export di atas tabel
                 buttons: [
                     {
@@ -640,6 +640,7 @@
             const tableB = $('#teamB').DataTable({
                 responsive: false,
                 searching: false,
+                pageLength: 5,
                 dom: 'Bfrtip', // Menambahkan tombol export di atas tabel
                 buttons: [
                     {
@@ -759,14 +760,14 @@
                         .map(([key, value]) => {
                             const zone = [key];
                             const opacityVal = value / Object.entries(teamACTZone).length;
-                            $("#teamAFieldCT").children(`.${zone}`).css("background-color",`rgba(0,0,0,${opacityVal})`);
+                            $("#teamAFieldCT").children(`.${zone}`).css("background-color",`rgba(255,0,0,${opacityVal})`);
                             
                         });
                         Object.entries(teamBCTZone)
                         .map(([key, value]) => {
                             const zone = [key];
                             const opacityVal = value / Object.entries(teamACTZone).length;
-                            $("#teamBFieldCT").children(`.${zone}`).css("background-color",`rgba(0,0,0,${opacityVal})`);
+                            $("#teamBFieldCT").children(`.${zone}`).css("background-color",`rgba(255,0,0,${opacityVal})`);
                             
                         });
 
@@ -827,8 +828,8 @@
             });
 
             function cleanVisualisasi() {
-                $("#teamAFieldCT").children('.heat').css("background-color",`rgba(0,0,0,0)`);
-                $("#teamBFieldCT").children('.heat').css("background-color",`rgba(0,0,0,0)`);
+                $("#teamAFieldCT").children('.heat').css("background-color",`rgba(255,0,0,0)`);
+                $("#teamBFieldCT").children('.heat').css("background-color",`rgba(255,0,0,0)`);
                 $("#teamAField").find('i').remove();
                 $("#teamBField").find('i').remove();
             }
